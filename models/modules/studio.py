@@ -40,6 +40,8 @@ class Studio(nn.Module):
     def _init_camera_settings(self):
         # ================= add_view_directions =================
         self.view_list = []
+        self.elev_list = []
+        self.azim_list = []
         # ================= add_view_directions =================
 
         self.Rs, self.Ts, self.fovs = [], [], []
@@ -77,21 +79,25 @@ class Studio(nn.Module):
 
             #================= add_view_directions =================
             view_list = []
+            view_thresh = 30
+            view_thresh_conjugate = 180 - view_thresh
             for elev, azim in zip(elev_list, azim_list):
-                if -45 <= azim <= 45 and abs(elev) < 45:
+                if -view_thresh <= azim <= view_thresh and abs(elev) < view_thresh:
                     view_list.append(0)  # 'front'
-                elif (45 < azim <= 135 or -135 <= azim < -45) and abs(elev) < 45:
+                elif (view_thresh < azim <= view_thresh_conjugate or -view_thresh_conjugate <= azim < -view_thresh) and abs(elev) < view_thresh:
                     view_list.append(1)  # 'side'
-                elif (135 < azim <= 180 or -180 <= azim <= -135) and abs(elev) < 45:
+                elif (view_thresh_conjugate < azim <= 180 or -180 <= azim <= -view_thresh_conjugate) and abs(elev) < view_thresh:
                     view_list.append(2)  # 'back'
-                elif elev > 45:
+                elif elev > view_thresh:
                     view_list.append(3)  # 'overhead'
-                elif elev < -45:
+                elif elev < -view_thresh:
                     view_list.append(4)  # 'bottom'
                 else:
                     view_list.append(0)  # Default to 'front' if no other condition matches
 
             self.view_list += view_list
+            self.elev_list += elev_list
+            self.azim_list += azim_list
             #================= add_view_directions =================
 
             Rs, Ts = init_trajectory(dist_list, elev_list, azim_list, at)

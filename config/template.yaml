@@ -61,13 +61,13 @@ depth_threshold: 0.05
 # inference camera space - usually don't need to change
 fov: 60
 elev: 30
-azim: [-180, 180]
+azim: [-170, 180]
 
 # training
 seed: 42
 num_steps: 15000 #30000
-num_anneal_steps: 3000 #5000
-log_steps: 200
+num_anneal_steps: 2500 #5000
+log_steps: 100
 log_latents_views: 10
 batch_size: 1
 verbose_mode: False
@@ -132,7 +132,7 @@ background: samples/primitives/cube.obj
 log_dir: "" # TODO
 
 prompt: "" # TODO
-a_prompt: best quality, high quality, extremely detailed, good geometry, high-res photo
+a_prompt: best quality, high quality, extremely detailed, good geometry, high-res photo, two eyes
 n_prompt: deformed, extra digit, fewer digits, cropped, worst quality, low quality, smoke, shading, lighting, lumination, shadow, text in image, watermarks
 
 scene_dir: data/scenes

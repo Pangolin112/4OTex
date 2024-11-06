@@ -339,6 +339,7 @@ class TexturePipeline(nn.Module):
 
             # ================= add_view_directions =================
             self.guidance.init_text_embeddings(self.config.batch_size, self.studio.view_list[ids])
+            print("elev angle is: ", self.studio.elev_list[ids], "azim angle is: ", self.studio.azim_list[ids])
             # ================= add_view_directions =================
 
             latents, _, _, rel_depth_normalized = self.forward(cameras, is_direct=("hashgrid" not in self.config.texture_type))
