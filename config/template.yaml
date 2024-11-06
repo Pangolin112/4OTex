@@ -66,7 +66,7 @@ azim: [-180, 180]
 # training
 seed: 42
 num_steps: 15000 #30000
-num_anneal_steps: 2500 #5000
+num_anneal_steps: 3000 #5000
 log_steps: 200
 log_latents_views: 10
 batch_size: 1
@@ -86,7 +86,7 @@ use_latent_embeddings: False
 texture_type: hashgrid # latent / rgb / hashgrid / hashgrid_mlp
 render_func_type: mlp # mlp / none
 
-add_view_directions: False
+add_view_directions: True #False
 add_target_positions: True
 add_target_normals: False
 num_view_embedding_layers: 4 # NOTE Siren has input and output layers by default

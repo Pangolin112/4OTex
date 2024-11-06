@@ -182,6 +182,10 @@ class Guidance(nn.Module):
             return_tensors="pt"
         ).input_ids.to(self.device)
 
+        #==================== print the current prompt==================
+        print("The current prompt is: ", self.prompt)
+        # ==================== print the current prompt==================
+
         with torch.no_grad():
             text_embeddings = self.text_encoder(text_input)[0].repeat(batch_size, 1, 1)
 
@@ -192,6 +196,10 @@ class Guidance(nn.Module):
             max_length=max_length, 
             return_tensors="pt"
         ).input_ids.to(self.device)
+
+        # ==================== print the current prompt==================
+        print("The current negative prompt is: ", self.n_prompt)
+        # ==================== print the current prompt==================
 
         with torch.no_grad():
             uncond_embeddings = self.text_encoder(uncond_input)[0].repeat(batch_size, 1, 1)
