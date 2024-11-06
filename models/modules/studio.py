@@ -38,6 +38,9 @@ class Studio(nn.Module):
         self._init_camera_settings()
 
     def _init_camera_settings(self):
+        # ================= add_view_directions =================
+        self.view_list = []
+        # ================= add_view_directions =================
 
         self.Rs, self.Ts, self.fovs = [], [], []
         self.inference_Rs, self.inference_Ts, self.inference_fovs = [], [], []
@@ -71,6 +74,25 @@ class Studio(nn.Module):
             dist_list = combinations[:, 0].tolist()
             elev_list = combinations[:, 1].tolist()
             azim_list = combinations[:, 2].tolist()
+
+            #================= add_view_directions =================
+            view_list = []
+            for elev, azim in zip(elev_list, azim_list):
+                if -45 <= azim <= 45 and abs(elev) < 45:
+                    view_list.append(0)  # 'front'
+                elif (45 < azim <= 135 or -135 <= azim < -45) and abs(elev) < 45:
+                    view_list.append(1)  # 'side'
+                elif (135 < azim <= 180 or -180 <= azim <= -135) and abs(elev) < 45:
+                    view_list.append(2)  # 'back'
+                elif elev > 45:
+                    view_list.append(3)  # 'overhead'
+                elif elev < -45:
+                    view_list.append(4)  # 'bottom'
+                else:
+                    view_list.append(0)  # Default to 'front' if no other condition matches
+
+            self.view_list += view_list
+            #================= add_view_directions =================
 
             Rs, Ts = init_trajectory(dist_list, elev_list, azim_list, at)
             fovs = combinations[:, 3].tolist()

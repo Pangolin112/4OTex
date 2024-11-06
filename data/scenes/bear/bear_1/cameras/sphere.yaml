@@ -5,14 +5,14 @@ dist:
   num_linspace: 1
 
 elev:
-  min: -45
-  max: 45
-  num_linspace: 10
+  min: -170
+  max: 180
+  num_linspace: 50
 
 azim:
-  min: -180
+  min: -170
   max: 180
-  num_linspace: 100
+  num_linspace: 50
 
 fov:
   min: 30

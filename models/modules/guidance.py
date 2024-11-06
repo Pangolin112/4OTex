@@ -30,8 +30,12 @@ class Guidance(nn.Module):
         self.config = config
         self.device = device
 
-        self.prompt = config.prompt + ", " + config.a_prompt if config.a_prompt else config.prompt
-        self.n_prompt = config.n_prompt
+        # ================= add_view_directions =================
+        self.view_sets = ['front', 'side', 'back', 'overhead', 'bottom']
+        # ================= add_view_directions =================
+
+        # self.prompt = config.prompt + ", " + config.a_prompt if config.a_prompt else config.prompt
+        # self.n_prompt = config.n_prompt
         
         self.weights_dtype = torch.float16 if self.config.enable_half_precision else torch.float32
 
@@ -172,7 +176,13 @@ class Guidance(nn.Module):
         # Return the list of chosen time steps
         self.chosen_ts = chosen_ts
 
-    def init_text_embeddings(self, batch_size):
+    def init_text_embeddings(self, batch_size, view_type_id):
+        # ================= add_view_directions =================
+        view_type = self.view_sets[view_type_id]
+        self.prompt = self.config.prompt + ", " + view_type + " view, " + self.config.a_prompt if self.config.a_prompt else self.config.prompt
+        self.n_prompt = self.config.n_prompt
+        # ================= add_view_directions =================
+
         ### get text embedding
         text_input = self.tokenizer(
             [self.prompt], 
