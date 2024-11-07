@@ -180,10 +180,7 @@ class Guidance(nn.Module):
         # ================= add_view_directions =================
         view_type = self.view_sets[view_type_id]
         self.prompt = self.config.prompt + ", " + view_type + " view, " + self.config.a_prompt if self.config.a_prompt else self.config.prompt
-        if view_type_id == 0:
-            self.n_prompt = self.config.n_prompt
-        else:
-            self.n_prompt = self.config.n_prompt + ", " + "face"
+        self.n_prompt = self.config.n_prompt
         # ================= add_view_directions =================
 
         ### get text embedding

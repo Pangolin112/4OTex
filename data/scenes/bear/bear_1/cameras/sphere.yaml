@@ -7,7 +7,7 @@ dist:
 elev:
   min: -170
   max: 180
-  num_linspace: 50
+  num_linspace: 10
 
 azim:
   min: -170
@@ -16,7 +16,7 @@ azim:
 
 fov:
   min: 30
-  max: 40
+  max: 60
   num_linspace: 5
 
 at: [[0.00463869, 0.29339489, 0.04314076]]

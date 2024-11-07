@@ -676,7 +676,10 @@ def init_background(model_path, bounding_box, output_dir, device, is_force=False
     offsets = bounding_box.mean(1, keepdims=True) # 3, 1
     bounding_box -= offsets
     scale = bounding_box.max() / vertices.max()
-    vertices *= scale
+    # vertices *= scale
+    # ================= add_view_directions =================
+    vertices *= scale * 2
+    # ================= add_view_directions =================
     vertices += offsets.T
 
     vmapping, indices, uvs = xatlas.parametrize(vertices, faces)

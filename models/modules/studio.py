@@ -79,7 +79,7 @@ class Studio(nn.Module):
 
             #================= add_view_directions =================
             view_list = []
-            view_thresh = 30
+            view_thresh = 45
             view_thresh_conjugate = 180 - view_thresh
             for elev, azim in zip(elev_list, azim_list):
                 if -view_thresh <= azim <= view_thresh and abs(elev) < view_thresh:

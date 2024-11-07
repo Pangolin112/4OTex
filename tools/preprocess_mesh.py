@@ -2,7 +2,7 @@ import trimesh
 import os
 import numpy as np
 
-mesh_path = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/ObjectTex/data/scenes/bear/bear_1/meshes/scene.obj'
+mesh_path = './data/DeformingThings4D/dragon/dragonOLO_act17/meshes/scene.obj'
 # mesh_path = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/ObjectTex/data/scenes/93f59740-4b65-4e8b-8a0f-6420b339469d/room_4/meshes/scene.obj'
 
 # Check if the file exists

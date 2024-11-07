@@ -20,11 +20,11 @@ phi_v_prediction: False # FIXME v_prediction is still buggy
 enable_memory_efficient_attention: True
 enable_vae_slicing: True
 enable_half_precision: False
-add_background: False
+add_background: True #False
 join_meshes_as_scene: True
 deterministic_vae_encoding: False
 enable_vae_patch_decoding: False
-use_background: False # add a pseudo background
+use_background: True #False # add a pseudo background
 enable_clip_benchmark: True
 load_lora_weights: ""
 
@@ -111,7 +111,7 @@ mlp_config:
   out_channels: 3
 
 # instance styles
-enable_anchor_embedding: True
+enable_anchor_embedding: False #True
 num_anchors: 4096
 detach_anchors: False
 
@@ -132,7 +132,7 @@ background: samples/primitives/cube.obj
 log_dir: "" # TODO
 
 prompt: "" # TODO
-a_prompt: best quality, high quality, extremely detailed, good geometry, high-res photo, two eyes
+a_prompt: best quality, high quality, extremely detailed, good geometry, high-res photo
 n_prompt: deformed, extra digit, fewer digits, cropped, worst quality, low quality, smoke, shading, lighting, lumination, shadow, text in image, watermarks
 
 scene_dir: data/scenes
