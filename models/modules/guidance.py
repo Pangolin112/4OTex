@@ -207,9 +207,9 @@ class Guidance(nn.Module):
             return_tensors="pt"
         ).input_ids.to(self.device)
 
-        # ==================== print the current prompt==================
+        # ==================== print the current n prompt==================
         print("The current negative prompt is: ", self.n_prompt)
-        # ==================== print the current prompt==================
+        # ==================== print the current n prompt==================
 
         with torch.no_grad():
             uncond_embeddings = self.text_encoder(uncond_input)[0].repeat(batch_size, 1, 1)

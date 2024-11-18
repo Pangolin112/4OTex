@@ -67,7 +67,7 @@ azim: [-170, 180]
 seed: 42
 num_steps: 15000 #30000
 num_anneal_steps: 2500 #5000
-log_steps: 100
+log_steps: 200
 log_latents_views: 10
 batch_size: 1
 verbose_mode: False

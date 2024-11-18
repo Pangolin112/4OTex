@@ -678,7 +678,7 @@ def init_background(model_path, bounding_box, output_dir, device, is_force=False
     scale = bounding_box.max() / vertices.max()
     # vertices *= scale
     # ================= add_view_directions =================
-    vertices *= scale * 2
+    vertices *= scale * 2.5
     # ================= add_view_directions =================
     vertices += offsets.T
 

@@ -66,6 +66,6 @@ def extract_and_export_frames(anime_file_path, output_dir):
 
 
 # Example usage
-anime_file_path = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/4OTex/data/DeformingThings4D/dragon/dragonOLO_act17/dragonOLO_act17.anime'
-output_dir = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/4OTex/data/DeformingThings4D/dragon/dragonOLO_act17/extracted_frames'
+anime_file_path = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/4OTex/data/DeformingThings4D/dragon/dragonQKS_act56/dragonQKS_act56.anime'
+output_dir = '/home/qianru/Projects/TUM/TUM_3/DLinVC/code/4OTex/data/DeformingThings4D/dragon/dragonQKS_act56/extracted_frames'
 extract_and_export_frames(anime_file_path, output_dir)
