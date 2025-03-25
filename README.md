@@ -4,29 +4,29 @@
 
 [![paper](https://img.shields.io/badge/_-Paper-blue?logo=adobeacrobatreader)](https://github.com/Pangolin112/4OTex/blob/main/static/DLinVC_Report.pdf)&nbsp;&nbsp;
 
-# Pipeline
+## Pipeline
 
 ![Pipeline Overview](./static/pipeline.png)  
 
-# Results
+## Results
 
-## Qualitative Results
+### Qualitative Results
 ![Ablation Study Results](./static/ablation.png)  
 
-## Quantitative Results
+### Quantitative Results
 <div align="center">
     <img src="./static/quantitative_results.png" width="70%">
 </div>
 
-## Video Demonstration
+### Video Demonstration
 To see the results in animation, check out the video below:
 
 [Watch the video results here](./static/final_video_Qianru_Yunfei_4OTex.mp4)
 *(Click the link to view the video)*
 
-# Code coming soon ...
+## Code coming soon ...
 
 
-# Acknowledgements
+## Acknowledgements
 
 We thank Prof. Dr. Matthias Nießner for his insightful advice during the project period.
