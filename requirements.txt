@@ -3,7 +3,7 @@ scikit-learn
 opencv-python
 matplotlib
 imageio
-diffusers==0.21.0
+diffusers==0.32.0
 einops
 transformers
 open-clip-torch
@@ -24,3 +24,6 @@ blenderproc
 dreifus
 torch-fidelity
 clean-fid
+sentencepiece
+scikit-image
+git+https://github.com/NVlabs/nvdiffrast.git
