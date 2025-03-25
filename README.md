@@ -6,8 +6,6 @@
 
 # Pipeline
 
-The following diagram illustrates the pipeline of 4OTex:
-
 ![Pipeline Overview](./static/pipeline.png)  
 
 # Results
