@@ -29,4 +29,5 @@ To see the results in animation, check out the video below:
 
 ## Acknowledgements
 
-We thank Prof. Dr. Matthias Nießner for his insightful advice during the project period.
+We thank [Prof. Dr. Matthias Nießner](https://www.niessnerlab.org/) for his insightful advice during the project period.
+
